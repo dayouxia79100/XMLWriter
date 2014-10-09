@@ -15,6 +15,8 @@ import java.io.File;
 
 /**
  * source: http://www.mkyong.com/java/how-to-create-xml-file-in-java-dom/
+ *
+ * We need to be able to generate the same tracking file as included in this project.
  */
 public class XML {
 
