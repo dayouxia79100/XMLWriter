@@ -16,13 +16,4 @@ public class TrackingDataXmlWriter {
         // name this output file Connections.xml
     }
 
-
-    public static void main(String[] argv[]){
-        System.out.print("hello");
-        // test if it works here
-        // uncomment and substitute the path
-//        writeConnectionsElement("***substitute this with the directory on your computer***");
-//        writeSensorsElement("***substitute this with the directory on your computer***");
-
-    }
 }

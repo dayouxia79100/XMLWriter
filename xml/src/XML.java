@@ -22,7 +22,8 @@ public class XML {
 
     // change the location of this file accordingly
     public static final String fileSavedToThisLocation = "/Users/dayouxia/Documents/startOver/untitled/file.xml";
-    public static void main(String argv[]) {
+    public static void writeSample(){
+
 
         try {
 
@@ -89,4 +90,5 @@ public class XML {
             tfe.printStackTrace();
         }
     }
+
 }
