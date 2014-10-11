@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TrackingData>
+  <Connections>
+    <COS>
+      <Name/>
+      <Fuser Type="fast">
+        <Parameters>
+          <KeepPoseForNumberOfFrames>balnks</KeepPoseForNumberOfFrames>
+          <GravityAssistance>balnks</GravityAssistance>
+          <AlphaTransition>balnks</AlphaTransition>
+          <GammaTranslation>balnks</GammaTranslation>
+          <AlphaRotation>balnks</AlphaRotation>
+          <GammaRotation>balnks</GammaRotation>
+          <ContinueLostTrackingWithOrientationSensor>balnks</ContinueLostTrackingWithOrientationSensor>
+        </Parameters>
+      </Fuser>
+      <SensorSource>
+        <SensorID/>
+        <HandEyeCalibration/>
+        <COSOffset>
+          <TranslationOffset/>
+          <RotationOffset>
+            <X/>
+            <Y/>
+            <Z/>
+            <W/>
+          </RotationOffset>
+        </COSOffset>
+      </SensorSource>
+    </COS>
+  </Connections>
+</TrackingData>

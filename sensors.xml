@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<TrackingData>
+  <Sensors>
+    <Sensor Subtype="Fast" Type="FeatureBasedSensorSource">
+      <SensorID/>
+      <Parameters>
+        <FeatureDescriptorAlignment>Regular</FeatureDescriptorAlignment>
+        <MaxObjectsToDetectPerFrame>5</MaxObjectsToDetectPerFrame>
+        <MaxObjectsToTrackInParallel>1</MaxObjectsToTrackInParallel>
+        <SimilarityThreshold>0.7</SimilarityThreshold>
+      </Parameters>
+    </Sensor>
+  </Sensors>
+</TrackingData>
