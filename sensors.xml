@@ -9,6 +9,13 @@
         <MaxObjectsToTrackInParallel>1</MaxObjectsToTrackInParallel>
         <SimilarityThreshold>0.7</SimilarityThreshold>
       </Parameters>
+      <SensorCOS>
+        <SensorCOSID>Patch1</SensorCOSID>
+        <Parameters>
+          <ReferenceImage>earthTarget.jpg</ReferenceImage>
+          <SimilarityThreshold>0.7</SimilarityThreshold>
+        </Parameters>
+      </SensorCOS>
     </Sensor>
   </Sensors>
 </TrackingData>

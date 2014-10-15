@@ -44,6 +44,7 @@ public class TrackingDataXmlWriter {
             sensor.setAttribute("Subtype","Fast");
 
             Element sensorId = doc.createElement("SensorID");
+            sensorId.appendChild(doc.createTextNode("FeatureTracking1"));
             sensor.appendChild(sensorId);
 
             Element parameters = doc.createElement("Parameters");
@@ -65,6 +66,23 @@ public class TrackingDataXmlWriter {
             similarityThreshold.appendChild(doc.createTextNode("0.7"));
             parameters.appendChild(similarityThreshold);
 
+            Element sensorCOS = doc.createElement("SensorCOS");
+            sensor.appendChild(sensorCOS);
+
+            Element sensorCOSId = doc.createElement("SensorCOSID");
+            sensorCOSId.appendChild(doc.createTextNode("Patch1"));
+            sensorCOS.appendChild(sensorCOSId);
+
+            Element sensorCOSIdParameter = doc.createElement("Parameters");
+            sensorCOS.appendChild(sensorCOSIdParameter);
+
+            Element referenceImage = doc.createElement("ReferenceImage");
+            referenceImage.appendChild(doc.createTextNode("earthTarget.jpg"));
+            sensorCOSIdParameter.appendChild(referenceImage);
+
+            Element sensorSimilarity = doc.createElement("SimilarityThreshold");
+            sensorSimilarity.appendChild(doc.createTextNode("0.7"));
+            sensorCOSIdParameter.appendChild(sensorSimilarity);
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
