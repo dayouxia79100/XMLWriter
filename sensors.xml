@@ -2,7 +2,7 @@
 <TrackingData>
   <Sensors>
     <Sensor Subtype="Fast" Type="FeatureBasedSensorSource">
-      <SensorID/>
+      <SensorID>FeatureTracking1</SensorID>
       <Parameters>
         <FeatureDescriptorAlignment>Regular</FeatureDescriptorAlignment>
         <MaxObjectsToDetectPerFrame>5</MaxObjectsToDetectPerFrame>
@@ -12,7 +12,21 @@
       <SensorCOS>
         <SensorCOSID>Patch1</SensorCOSID>
         <Parameters>
-          <ReferenceImage>earthTarget.jpg</ReferenceImage>
+          <ReferenceImage>dog.jpg</ReferenceImage>
+          <SimilarityThreshold>0.7</SimilarityThreshold>
+        </Parameters>
+      </SensorCOS>
+      <SensorCOS>
+        <SensorCOSID>Patch2</SensorCOSID>
+        <Parameters>
+          <ReferenceImage>wine.jpg</ReferenceImage>
+          <SimilarityThreshold>0.7</SimilarityThreshold>
+        </Parameters>
+      </SensorCOS>
+      <SensorCOS>
+        <SensorCOSID>Patch3</SensorCOSID>
+        <Parameters>
+          <ReferenceImage>octocat.png</ReferenceImage>
           <SimilarityThreshold>0.7</SimilarityThreshold>
         </Parameters>
       </SensorCOS>

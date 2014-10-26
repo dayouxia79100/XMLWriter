@@ -1,29 +1,122 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <TrackingData>
+  <Sensors>
+    <Sensor Subtype="Fast" Type="FeatureBasedSensorSource">
+      <SensorID>FeatureTracking1</SensorID>
+      <Parameters>
+        <FeatureDescriptorAlignment>Regular</FeatureDescriptorAlignment>
+        <MaxObjectsToDetectPerFrame>5</MaxObjectsToDetectPerFrame>
+        <MaxObjectsToTrackInParallel>1</MaxObjectsToTrackInParallel>
+        <SimilarityThreshold>0.7</SimilarityThreshold>
+      </Parameters>
+      <SensorCOS>
+        <SensorCOSID>Patch1</SensorCOSID>
+        <Parameters>
+          <ReferenceImage>dog.jpg</ReferenceImage>
+          <SimilarityThreshold>0.7</SimilarityThreshold>
+        </Parameters>
+      </SensorCOS>
+      <SensorCOS>
+        <SensorCOSID>Patch2</SensorCOSID>
+        <Parameters>
+          <ReferenceImage>wine.jpg</ReferenceImage>
+          <SimilarityThreshold>0.7</SimilarityThreshold>
+        </Parameters>
+      </SensorCOS>
+      <SensorCOS>
+        <SensorCOSID>Patch3</SensorCOSID>
+        <Parameters>
+          <ReferenceImage>octocat.png</ReferenceImage>
+          <SimilarityThreshold>0.7</SimilarityThreshold>
+        </Parameters>
+      </SensorCOS>
+    </Sensor>
+  </Sensors>
   <Connections>
     <COS>
-      <Name/>
-      <Fuser Type="fast">
+      <Name>MarkerlessCOS1</Name>
+      <Fuser Type="SmoothingFuser">
         <Parameters>
-          <KeepPoseForNumberOfFrames>balnks</KeepPoseForNumberOfFrames>
-          <GravityAssistance>balnks</GravityAssistance>
-          <AlphaTransition>balnks</AlphaTransition>
-          <GammaTranslation>balnks</GammaTranslation>
-          <AlphaRotation>balnks</AlphaRotation>
-          <GammaRotation>balnks</GammaRotation>
-          <ContinueLostTrackingWithOrientationSensor>balnks</ContinueLostTrackingWithOrientationSensor>
+          <KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames>
+          <GravityAssistance> </GravityAssistance>
+          <AlphaTransition>1.0</AlphaTransition>
+          <GammaTranslation>1.0</GammaTranslation>
+          <AlphaRotation>0.8</AlphaRotation>
+          <GammaRotation>0.8</GammaRotation>
+          <ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor>
         </Parameters>
       </Fuser>
       <SensorSource>
-        <SensorID/>
-        <HandEyeCalibration/>
-        <COSOffset>
-          <TranslationOffset/>
+        <SensorID>FeatureTracking1</SensorID>
+        <SensorCosID>Patch1</SensorCosID>
+        <HandEyeCalibration>
+          <TranslationOffset>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </TranslationOffset>
           <RotationOffset>
-            <X/>
-            <Y/>
-            <Z/>
-            <W/>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+            <W>1</W>
+          </RotationOffset>
+        </HandEyeCalibration>
+        <COSOffset>
+          <TranslationOffset>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </TranslationOffset>
+          <RotationOffset>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+            <W>1</W>
+          </RotationOffset>
+        </COSOffset>
+      </SensorSource>
+    </COS>
+    <COS>
+      <Name>MarkerlessCOS2</Name>
+      <Fuser Type="SmoothingFuser">
+        <Parameters>
+          <KeepPoseForNumberOfFrames>2</KeepPoseForNumberOfFrames>
+          <GravityAssistance> </GravityAssistance>
+          <AlphaTransition>1.0</AlphaTransition>
+          <GammaTranslation>1.0</GammaTranslation>
+          <AlphaRotation>0.8</AlphaRotation>
+          <GammaRotation>0.8</GammaRotation>
+          <ContinueLostTrackingWithOrientationSensor>false</ContinueLostTrackingWithOrientationSensor>
+        </Parameters>
+      </Fuser>
+      <SensorSource>
+        <SensorID>FeatureTracking1</SensorID>
+        <SensorCosID>Patch2</SensorCosID>
+        <HandEyeCalibration>
+          <TranslationOffset>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </TranslationOffset>
+          <RotationOffset>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+            <W>1</W>
+          </RotationOffset>
+        </HandEyeCalibration>
+        <COSOffset>
+          <TranslationOffset>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </TranslationOffset>
+          <RotationOffset>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+            <W>1</W>
           </RotationOffset>
         </COSOffset>
       </SensorSource>
