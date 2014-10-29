@@ -13,6 +13,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -20,18 +21,19 @@ import java.util.ArrayList;
  */
 public class TrackingDataXmlWriter {
 
-    public static void headerFooter(String locationToSaveTheFile, ArrayList<String> images){
+    public static void headerFooter(ArrayList<String> imgAttr,String locationToSaveTheFile, ArrayList<String> images){
 
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = docFactory.newDocumentBuilder();
             Document doc = documentBuilder.newDocument();
             Element root = doc.createElement("TrackingData");
+
             doc.appendChild(root);
 
             //xml part
             writeSensorsElement(images,root,doc);
-            writeConnectionsElement(root,images.size(),doc);
+            writeConnectionsElement(imgAttr, root,doc);
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
@@ -118,27 +120,27 @@ public class TrackingDataXmlWriter {
             }
     }
 
-    public static void writeConnectionsElement(Element root, int array_size, Document doc) {
+    public static void writeConnectionsElement(ArrayList<String> imgAttr,Element root, Document doc) {
 
         // you need to write the code to write everything under <Connections> tag, it is ok to hardcode it, but do put comments
         // name this output file Connections.xml
 
         String marker = "MarkerlessCOS";
-
+        int counter =1;
         Element connections = doc.createElement("Connections");
         root.appendChild(connections);
-        if (array_size != 0) {
-            for (int i = 1; i < array_size; i++) {
+        if (imgAttr.size() != 0) {
+            for (int i = 0; i < imgAttr.size(); i++) {
                 Element cos = doc.createElement("COS");
                 connections.appendChild(cos);
 
                 //Create an
                 Element name = doc.createElement("Name");
-                name.appendChild(doc.createTextNode(marker + i));
+                name.appendChild(doc.createTextNode(marker + counter));
                 cos.appendChild(name);
 
                 Element fuser = doc.createElement("Fuser");
-                fuser.setAttribute("Type", "SmoothingFuser");
+                fuser.setAttribute("Type", imgAttr.get(i));
                 cos.appendChild(fuser);
 
                 Element parameters = doc.createElement("Parameters");
@@ -180,7 +182,7 @@ public class TrackingDataXmlWriter {
                 sensorSource.appendChild(sensorId);
 
                 Element sensorCosId = doc.createElement("SensorCosID");
-                sensorCosId.appendChild(doc.createTextNode("Patch" + i));
+                sensorCosId.appendChild(doc.createTextNode("Patch" + counter));
                 sensorSource.appendChild(sensorCosId);
 
                 Element handEyeCalibration = doc.createElement("HandEyeCalibration");
@@ -199,6 +201,7 @@ public class TrackingDataXmlWriter {
 
                 generateXYZW(cosOffset, doc);
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            counter++;
             }
         }
     }
